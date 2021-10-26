@@ -22,6 +22,11 @@ namespace CalculatorWithTests
 
         public static double RestOfDivide(double a, double b)
         {
+            while (b == 0)
+            {
+                Console.WriteLine("You can't divide by zero!");
+                return 0;
+            }
             return a % b;
         }
 
@@ -52,6 +57,11 @@ namespace CalculatorWithTests
 
         public static double Power(double n1, double n2)
         {
+            while (n2 < 0)
+            {
+                Console.WriteLine("Wrong power. Choose number from > 1, please!");
+                return 0;
+            }
             double res = 1;
             for (int i = 1; i <= n2; i++)
             {
@@ -62,7 +72,13 @@ namespace CalculatorWithTests
 
         public static double Sqrt(double a)
         {
-            return Math.Sqrt(a);
+            while (a < 1)
+            {
+                Console.WriteLine("Number has to be > 0!");
+                return 0;
+            }
+            double res =  Math.Sqrt(a);
+            return Math.Round(res, 4);
         }
 
         public static double NumInput()
